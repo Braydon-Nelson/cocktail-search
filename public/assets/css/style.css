@@ -1,0 +1,25 @@
+body {
+    background-color: coral;
+    overflow: hidden;
+}
+
+#navLinks {
+    font-size: 22px;
+    color: purple;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    background-color: greenyellow;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#glasses {
+    height:150px;
+    width: 150px;
+    
+}
