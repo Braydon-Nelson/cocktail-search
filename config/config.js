@@ -1,8 +1,8 @@
-modules.exports = {
+module.exports = {
   development: {
     username: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_PASSWORD,
-    database: "cocktails_development",
+    database: "cocktails_db",
     host: "127.0.0.1",
     dialect: "mysql",
     operatorsAliases: false
