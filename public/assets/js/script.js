@@ -10,6 +10,3 @@ $(document).ready(function () {
 
 });
 
-
-
-
