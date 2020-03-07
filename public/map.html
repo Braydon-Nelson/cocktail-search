@@ -1,13 +1,64 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Barrio&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/map.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <title>MAP</title>
+
 </head>
 
 <body>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button id="find-me" class="btn-hover color-1" type="button">Use current location</button><br />
+                <p id="status"></p>
+                <a id="map-link" target="_blank"></a>
+            </div>
+            <div class="col-md4"></div>
+        </div>
+    </div>
+
+
+    <div class="container2">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="map"></div>
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3">
+        <div class="row justify-content-center">
+            <div class="col-lg-1"></div>
+            <div class="col-md-10">
+                <p>Not sure you want to make an account yet? just click <a id="here" href="index.html">here</a> to go
+                    back
+                    to the home page!
+                </p>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+
+    <script src="../public/assets/js/map.js"></script>
 </body>
 
 </html>
