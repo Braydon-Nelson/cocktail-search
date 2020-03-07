@@ -1,0 +1,71 @@
+body {
+    background-color: #ffae42;
+    overflow: hidden;
+}
+
+.container {
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left:  auto;
+    margin-top: 20px;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left:  10px; 
+}
+
+.container2 {
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left:  auto;
+    margin-top: 20px;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left:  10px; 
+    background-color: grey;
+}
+
+.container3 {
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left:  auto;
+    margin-top: 20px;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left:  10px; 
+}
+
+
+    .btn-hover {
+        width: 200px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin: 20px;
+        height: 55px;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    .btn-hover:hover {
+        background-position: 100% 0;
+        transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    .btn-hover:focus {
+        outline: none;
+    }
+    
+    .btn-hover.color-1 {
+        background-image: linear-gradient(to right, #fe6076, #f5ce62, #667eea, #8E37D7);
+        box-shadow: 0 4px 15px 0 rgba(118, 8, 168, 0.75);
+    }
