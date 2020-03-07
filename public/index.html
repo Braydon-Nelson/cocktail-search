@@ -7,6 +7,16 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Barrio&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <title>Cocktail Searcher</title>
 </head>
 
@@ -39,14 +49,35 @@
 
     <div class="container">
         <form class="form-group">
-            <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <br>
             <div class="row">
-                <div class="col-md-1"></div>
+                <div class="col-md-9">
+                    <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                </div>
+
+                <div class="col-md-2">
+                    <div class="toggle-radio">
+                        <input type="radio" name="rdo" id="yes" checked>
+                        <input type="radio" name="rdo" id="no">
+                        <div class="switch">
+                            <label for="yes">Yes</label>
+                            <label for="no">No</label>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="popover" type="button" class="btn btn-sm btn-secondary" data-trigger="hover"
+                    title="Click yes or no"
+                    data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!">?</button>
+            </div>
+            <br>
+
+            <div class="row">
                 <div class="col-md-1">
                     <button id="submit" class="btn-hover color-1" type="submit">Search</button>
                 </div>
-                <div id="div" class="col-md-7"></div>
+                <div id="div" class="col-md-6"></div>
                 <div class="col-md-1">
                     <button id="random" class="btn-hover color-1" type="button">Random</button>
                 </div>
@@ -55,7 +86,6 @@
     </div>
 
 </body>
-
 <script src="./assets/js/script.js"></script>
 
 </html>
