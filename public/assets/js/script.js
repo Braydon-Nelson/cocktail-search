@@ -15,7 +15,11 @@ $(document).ready(function () {
             type: ['liquor store']
         };
         service = new google.maps.places.PlacesService(map);
+
+        service.nearbySearch(request, callback);
+
         service.textSearch(request, callback);
+
     }
     function callback(results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -31,8 +35,22 @@ $(document).ready(function () {
         "timeout": 0,
     };
 
+
+
+    $(function () {
+        $('[data-trigger="hover"]').popover()
+    })
+
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
 
 });
+
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+});
+
