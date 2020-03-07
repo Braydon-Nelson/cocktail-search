@@ -1,12 +1,7 @@
 $(document).ready(function () {
 
     $(function () {
-        $('[data-trigger="hover"]').popover()
+        $('[data-toggle="popover"]').popover()
     })
-
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-
 });
 

@@ -48,12 +48,12 @@
     </div>
 
     <form class="form-group">
-        <div class="row">
+        <div id="mainRow" class="row">
             <div class="col-md-1"></div>
             <div id="options" class="col-md-2">
                 <div id="serchOptions" class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button id="optionsButton" class="btn btn-secondary dropdown-toggle" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Search Options
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -69,7 +69,7 @@
                     aria-label="Search">
             </div>
 
-            <div class="col-md-1">
+            <div id="toggleDiv" class="col-md-1">
                 <div class="toggle-radio">
                     <input type="radio" name="rdo" id="yes" checked>
                     <input type="radio" name="rdo" id="no">
@@ -81,11 +81,9 @@
                 </div>
             </div>
 
-            <div id="popDiv" class="col-md-1">
-                <button id="popover" type="button" class="btn btn-sm btn-secondary" data-trigger="hover"
-                    title="Click yes or no"
-                    data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!">?</button>
-            </div>
+            <button id="popover" type="button" class="btn btn-sm btn-secondary" data-toggle="popover"
+                title="Click yes or no"
+                data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!">?</button>
             <div class="col-md-1"></div>
         </div>
         <br>
