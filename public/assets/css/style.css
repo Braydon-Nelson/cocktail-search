@@ -28,7 +28,7 @@ body {
     border-radius: 15px;
     height: 60px;
     text-align: center;
-    margin-left: 15px;
+    /* margin-left: -75px; */
 }
 
 #div {
@@ -106,7 +106,7 @@ body {
     width: 150px;
     height: 50px;
     text-align: center;
-    margin: -30px 0 0 -150px;
+    margin: -30px 0 0 -100px;
     background: #00bc9c;
     transition: all 0.2s ease;
     border-radius: 25px;
@@ -178,8 +178,24 @@ body {
 }
 
 #popover {
-    float: right;
-    border-radius: 50px;
-    height: 30px;
-    margin-top: 10px;
+  border-radius: 50px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#popDiv {
+  display: flex;
+  justify-content: center;
+  z-index: -50;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+#randomDiv {
+  margin-left: 45px;
 }
