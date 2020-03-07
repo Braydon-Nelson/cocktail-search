@@ -28,6 +28,7 @@ body {
     border-radius: 15px;
     height: 60px;
     text-align: center;
+    /* margin-left: -75px; */
 }
 
 #div {
@@ -98,4 +99,103 @@ body {
 .btn-hover.color-1 {
     background-image: linear-gradient(to right, #fe6076, #f5ce62, #667eea, #8E37D7);
     box-shadow: 0 4px 15px 0 rgba(118, 8, 168, 0.75);
+}
+
+    .switch {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin: -30px 0 0 -100px;
+    background: #00bc9c;
+    transition: all 0.2s ease;
+    border-radius: 25px;
+    margin-top: 2px;
+  }
+  .switch span {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0px 0px -4px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease;
+  }
+  .switch span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    margin-top: -8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }
+  input[type=radio] {
+    display: none;
+  }
+  .switch label {
+    cursor: pointer;
+    color: rgba(0,0,0,0.2);
+    width: 60px;
+    line-height: 50px;
+    transition: all 0.2s ease;
+  }
+  label[for=yes] {
+    position: absolute;
+    left: 0px;
+    height: 20px;
+  }
+  label[for=no] {
+    position: absolute;
+    right: 0px;
+  }
+  #no:checked ~ .switch {
+    background: #eb4f37;
+  }
+  #no:checked ~ .switch span {
+    background: #fff;
+    margin-left: -8px;
+  }
+  #no:checked ~ .switch span:after {
+    background: #fff;
+    height: 20px;
+    margin-top: -8px;
+    margin-left: 8px;
+  }
+  #yes:checked ~ .switch label[for=yes] {
+    color: #fff;
+  }
+  #no:checked ~ .switch label[for=no] {
+    color: #fff;
+  }
+
+.toggle-radio {
+    float: right;
+}
+
+#popover {
+  border-radius: 50px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#popDiv {
+  display: flex;
+  justify-content: center;
+  z-index: -50;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+#randomDiv {
+  margin-left: 45px;
 }

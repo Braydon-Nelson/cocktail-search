@@ -1,15 +1,14 @@
-const path = require("path");
 var passport = require("../config/passport");
 var db = require("../models");
 
 module.exports = function (app) {
 
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        console.log("Got to the api route");
         res.json(req.user);
+
     });
 
-
-    // Sign up API POST --- STILL NEED TO MAKE LOGIN!!!
     app.post("/api/signup", function (req, res) {
         db.User.create({
             username: req.body.username,
@@ -24,7 +23,27 @@ module.exports = function (app) {
             });
     });
 
+    app.get("/logout", function (req, res) {
+        req.logout();
+        res.redirect("/");
+    });
 
+    // Route for getting some data about our user to be used client side
+    app.get("/api/user_data", function (req, res) {
+        if (!req.user) {
+            // The user is not logged in, send back an empty object
+            res.json({});
+        } else {
+            // Otherwise send back the user's email and id
+            // Sending back a password, even a hashed password, isn't a good idea
+            res.json({
+                id: req.user.id,
+                username: req.user.username,
+                email: req.user.email,
+                password: req.user.password
+            });
+        }
+    });
 
 
 }
