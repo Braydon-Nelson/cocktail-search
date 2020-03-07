@@ -20,9 +20,8 @@ body {
 }
 
 #glasses {
-    height:150px;
+    height: 150px;
     width: 150px;
-    
 }
 
 #searchBar {
@@ -49,14 +48,14 @@ body {
     text-align: center;
     width: 150px;
     height: 60px;
-    color: white;    
+    color: white;
 }
 
 #title {
     font-family: 'Barrio', cursive;
     font-size: 80px;
-    background-image:linear-gradient(to right, #fe6076,  #fe6076, #667eea, #8E37D7);
-    color:transparent;
+    background-image: linear-gradient(to right, #fe6076, #fe6076, #667eea, #8E37D7);
+    color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -75,10 +74,9 @@ body {
     cursor: pointer;
     margin: 20px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
-
     border-radius: 50px;
     transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
