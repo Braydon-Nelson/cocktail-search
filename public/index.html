@@ -47,43 +47,60 @@
         <p>let's get drunk!</p>
     </div>
 
-    <div class="container">
-        <form class="form-group">
-            <div class="row">
-                <div class="col-md-9">
-                    <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search"
-                        aria-label="Search">
-                </div>
-
-                <div class="col-md-2">
-                    <div class="toggle-radio">
-                        <input type="radio" name="rdo" id="yes" checked>
-                        <input type="radio" name="rdo" id="no">
-                        <div class="switch">
-                            <label for="yes">Yes</label>
-                            <label for="no">No</label>
-                            <span></span>
-                        </div>
+    <form class="form-group">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div id="options" class="col-md-2">
+                <div id="serchOptions" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Search Options
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Drink Name</a>
+                        <a class="dropdown-item" href="#">Ingredients</a>
+                        <a class="dropdown-item" href="#">Drink Glass</a>
                     </div>
                 </div>
+            </div>
 
+            <div class="col-md-6">
+                <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search"
+                    aria-label="Search">
+            </div>
+
+            <div class="col-md-1">
+                <div class="toggle-radio">
+                    <input type="radio" name="rdo" id="yes" checked>
+                    <input type="radio" name="rdo" id="no">
+                    <div class="switch">
+                        <label for="yes">Yes</label>
+                        <label for="no">No</label>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="popDiv" class="col-md-1">
                 <button id="popover" type="button" class="btn btn-sm btn-secondary" data-trigger="hover"
                     title="Click yes or no"
                     data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!">?</button>
             </div>
-            <br>
+            <div class="col-md-1"></div>
+        </div>
+        <br>
 
-            <div class="row">
-                <div class="col-md-1">
-                    <button id="submit" class="btn-hover color-1" type="submit">Search</button>
-                </div>
-                <div id="div" class="col-md-6"></div>
-                <div class="col-md-1">
-                    <button id="random" class="btn-hover color-1" type="button">Random</button>
-                </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <button id="submit" class="btn-hover color-1" type="submit">Search</button>
             </div>
-        </form>
-    </div>
+            <div id="randomDiv" class="col-md-2"></div>
+            <div class="col-md-2">
+                <button id="random" class="btn-hover color-1" type="button">Random</button>
+            </div>
+        </div>
+    </form>
 
 </body>
 <script src="./assets/js/script.js"></script>
