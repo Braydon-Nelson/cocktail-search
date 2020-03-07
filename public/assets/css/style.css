@@ -1,25 +1,103 @@
 body {
-    background-color: coral;
+    background-color: #ffae42;
     overflow: hidden;
 }
 
 #navLinks {
-    font-size: 22px;
-    color: purple;
+    font-size: 19px;
+    color: white;
 }
 
 .logo {
     height: 200px;
     width: 200px;
-    background-color: greenyellow;
+    background-color: dimgray;
     border-radius: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
 }
 
 #glasses {
     height:150px;
     width: 150px;
     
+}
+
+#searchBar {
+    border-radius: 15px;
+    height: 60px;
+    text-align: center;
+}
+
+#div {
+    z-index: -500;
+}
+
+#submit {
+    background-color: lightseagreen;
+    text-align: center;
+    width: 150px;
+    height: 60px;
+    color: white;
+}
+
+#random {
+    background-color: lightseagreen;
+    text-align: center;
+    width: 150px;
+    height: 60px;
+    color: white;    
+}
+
+#title {
+    font-family: 'Barrio', cursive;
+    font-size: 80px;
+    background-image:linear-gradient(to right, #fe6076,  #fe6076, #667eea, #8E37D7);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #fe6076, #f5ce62, #667eea, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(118, 8, 168, 0.75);
 }
