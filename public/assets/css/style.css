@@ -1,6 +1,5 @@
 body {
     background-color: #ffae42;
-    overflow: hidden;
 }
 
 #navLinks {
@@ -28,7 +27,6 @@ body {
     border-radius: 15px;
     height: 60px;
     text-align: center;
-    /* margin-left: -75px; */
 }
 
 #div {
@@ -72,8 +70,6 @@ body {
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 20px;
-    height: 55px;
     text-align: center;
     border: none;
     background-size: 300% 100%;
@@ -174,13 +170,19 @@ body {
   }
 
 .toggle-radio {
-    float: right;
+    margin-left: 90px;
+}
+
+#toggleDiv {
+  display: flex;
+  justify-content: center;
 }
 
 #popover {
   border-radius: 50px;
   height: 30px;
   margin-top: 10px;
+  margin-left: -5%;
 }
 
 #popDiv {
@@ -192,10 +194,20 @@ body {
 #options {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 7px;
   padding: 0px;
 }
 
+#optionsButton {
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
+  width: 200px;
+  border-radius: 50px;
+}
+
 #randomDiv {
-  margin-left: 45px;
+  margin-left: 70px;
+}
+
+#mainRow {
+  z-index: -60;
 }
