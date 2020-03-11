@@ -182,14 +182,9 @@ body {
   border-radius: 50px;
   height: 30px;
   margin-top: 10px;
-  margin-left: -5%;
+  margin-left: 4%;
 }
 
-#popDiv {
-  display: flex;
-  justify-content: center;
-  z-index: -50;
-}
 
 #options {
   display: flex;
@@ -210,4 +205,36 @@ body {
 
 #mainRow {
   z-index: -60;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  float: left;
+  margin: 7px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+@media only screen and (max-width: 600px) {
+  #popover {   
+    margin-left: 27%;
+  }
+  
+  #submit {
+    margin-bottom: 10px;
+  }
+
+  #optionsButton {
+    margin-bottom: 10px;
+  }
 }
