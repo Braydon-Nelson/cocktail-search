@@ -24,11 +24,11 @@
 
     <div class="row">
         <div class="col-md-2">
-            <a id="navLinks" class="nav-link" href="map.html">Find Liquor Store</a>
+            <a id="navLinks" class="nav-link liquorStore" href="map.html">Find Liquor Store</a>
         </div>
         <div class="col-md-9"></div>
         <div class="col-md-1">
-            <a id="navLinks" class="nav-link" href="signup.html">Sign Up / Log In</a>
+            <a id="navLinks" class="nav-link signupButton" href="signup.html">Sign Up / Log In</a>
         </div>
     </div>
     <br>
@@ -83,7 +83,8 @@
 
             <button id="popover" type="button" class="btn btn-sm btn-secondary" data-toggle="popover"
                 title="Click yes or no"
-                data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!">?</button>
+                data-content="Click on the yes or no on the toggler to tell us you whether want alcohol in your drinks or not!"
+                data-placement="top">?</button>
             <div class="col-md-1"></div>
         </div>
         <br>
@@ -99,6 +100,24 @@
             </div>
         </div>
     </form>
+
+    <div class="dynamicCards">
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Moscow Mule</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">2 oz Vodka</li>
+                    <li class="list-group-item">2 oz Lime juice</li>
+                    <li class="list-group-item">8 oz Ginger ale</li>
+                </ul>
+                <p class="card-text">Combine vodka and ginger beer in a highball glass filled with ice. Add lime juice.
+                    Stir gently. Garnish.</p>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 <script src="./assets/js/script.js"></script>
