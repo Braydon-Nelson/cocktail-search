@@ -52,4 +52,61 @@ $(document).ready(function () {
             });
 
     }
+
+    let signUpForm = $("form.signup");
+    let signUpUsername = $("input#signUpUsername")
+    let signUpEmail = $("input#signUpEmail");
+    let signUpPassword = $("input#signUpPassword");
+
+    // When the signup button is clicked, we validate the email and password are not blank
+    signUpForm.on("submit", function (event) {
+        event.preventDefault();
+        console.log("submited");
+
+        var userData = {
+            username: signUpUsername.val().trim(),
+            email: signUpEmail.val().trim(),
+            password: signUpPassword.val().trim()
+        };
+        console.log("User data made");
+
+        if (!userData.email || !userData.password || !userData.username) {
+            console.log("Somthing is missing");
+            console.log(userData);
+
+
+            return;
+        }
+
+        console.log("Something is there");
+
+        // If we have an email and password, run the signUpUser function
+        signUpUser(userData.username, userData.email, userData.password);
+        signUpUsername.val("");
+        signUpEmail.val("");
+        signUpPassword.val("");
+    });
+
+    // Does a post to the signup route. If successful, we are redirected to the members page
+    // Otherwise we log any errors
+    function signUpUser(username, email, password) {
+        $.post("/api/signup", {
+            username: username,
+            email: email,
+            password: password
+        })
+            .then(function (data) {
+                console.log("Should be redirecting");
+
+                window.location.replace("/");
+                // If there's an error, handle it by throwing up a bootstrap alert
+            })
+            .catch(handleLoginErr);
+    }
+
+    function handleLoginErr(err) {
+        $("#alert .msg").text(err.responseJSON);
+        $("#alert").fadeIn(500);
+    }
+
 });
