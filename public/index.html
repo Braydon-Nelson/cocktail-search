@@ -52,15 +52,12 @@
             <div class="col-md-1"></div>
             <div id="options" class="col-md-2">
                 <div id="serchOptions" class="dropdown">
-                    <button id="optionsButton" class="btn btn-secondary dropdown-toggle" type="button"
-                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Search Options
-                    </button>
-                    <div class="dropdown-menu" id="select" aria-labelledby="dropdownMenuButton">
-                        <a onclick="return selectedOption()" class="dropdown-item" href="#">Drink Name</a>
-                        <a onclick="return selectedOption()" class="dropdown-item" href="#">Ingredients</a>
-                        <a onclick="return selectedOption()" class="dropdown-item" href="#">Drink Glass</a>
-                    </div>
+                    <select id="optionsButton" aria-labelledby="dropdownMenuButton">
+                        <option value="0">Search Options</option>
+                        <option value="1">Drink Name</option>
+                        <option value="2">Ingredients</option>
+                        <option value="3">Drink Glass</option>
+                    </select>
                 </div>
             </div>
 
@@ -105,7 +102,7 @@
 
         <div class="card" style="width: 18rem;">
             <img src="https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg" class="card-img-top">
-            <a onclick="return favorite()" href="#">
+            <a class="favoriteImage" href="#">
                 <img src="assets/images/png/002-martini-1.png" class="cardImage">
             </a>
             <div class="card-body">
