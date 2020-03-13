@@ -103,6 +103,9 @@ $(document).ready(function () {
         })
             .then(function (data) {
                 console.log("Should be redirecting");
+                let signedIn = true;
+                localStorage.setItem('signedIn', JSON.stringify(signedIn));
+                localStorage.setItem('userSignedIn', JSON.stringify(username));
 
                 window.location.replace("/");
                 // If there's an error, handle it by throwing up a bootstrap alert

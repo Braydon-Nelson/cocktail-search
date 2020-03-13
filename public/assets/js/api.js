@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     //grabs the dropdown option and search text
     document.getElementById("submit").addEventListener("click", function (event) {
         event.preventDefault();

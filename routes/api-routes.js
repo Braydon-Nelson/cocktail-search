@@ -23,6 +23,20 @@ module.exports = function (app) {
             });
     });
 
+    app.post("/api/favorite", function (req, res) {
+        db.Favorite.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        })
+            .then(function () {
+                res.redirect("/");
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    });
+
     app.get("/logout", function (req, res) {
         req.logout();
         res.redirect("/");
