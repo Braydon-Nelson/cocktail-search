@@ -25,26 +25,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <button id="find-me" class="btn-hover color-1" type="button">Use current location</button><br />
-                <p id="status"></p>
-                <a id="map-link" target="_blank"></a>
-            </div>
-            <div class="col-md4"></div>
+            <div></div>
         </div>
     </div>
 
 
     <div class="container2">
         <div class="row">
-            <!-- <div class="col-md-12">
-                <div id="map"></div>
-                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBFK5Zw23f4gfIGvnMwCVk5seAXh6whHW8
-    &q=liquor+stores+in+utah" allowfullscreen>
-                </iframe>
-            </div> -->
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box" style="top: 17px; left: 47%;">
             <div id="map"></div>
         </div>
     </div>
@@ -69,38 +57,35 @@
     <script>
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: -33.8688, lng: 151.2195 },
+                center: { lat: 40.586681, lng: -111.895081 },
                 zoom: 13,
                 mapTypeId: 'roadmap'
             });
 
-            // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-            // Bias the SearchBox results towards current map's viewport.
             map.addListener('bounds_changed', function () {
                 searchBox.setBounds(map.getBounds());
             });
 
             var markers = [];
-            // Listen for the event fired when the user selects a prediction and retrieve
-            // more details for that place.
+
             searchBox.addListener('places_changed', function () {
                 var places = searchBox.getPlaces();
                 if (places.length == 0) {
                     return;
                 }
 
-                // Clear out the old markers.
+
                 markers.forEach(function (marker) {
                     marker.setMap(null);
                 });
 
                 markers = [];
 
-                // For each place, get the icon, name and location.
+
                 var bounds = new google.maps.LatLngBounds();
                 places.forEach(function (place) {
                     if (!place.geometry) {
@@ -115,7 +100,7 @@
                         scaledSize: new google.maps.Size(25, 25)
                     };
 
-                    // Create a marker for each place.
+
                     markers.push(new google.maps.Marker({
                         map: map,
                         icon: icon,
@@ -124,7 +109,7 @@
                     }));
 
                     if (place.geometry.viewport) {
-                        // Only geocodes have viewport.
+
                         bounds.union(place.geometry.viewport);
                     } else {
                         bounds.extend(place.geometry.location);
