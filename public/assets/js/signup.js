@@ -24,6 +24,8 @@ $(document).ready(function () {
         };
 
         if (!userData.username || !userData.password) {
+            let signedIn = false;
+            localStorage.setItem('signedIn', JSON.stringify(signedIn));
             return;
         }
 
@@ -40,12 +42,16 @@ $(document).ready(function () {
             password: password
         })
             .then(function () {
+                let signedIn = true;
+                localStorage.setItem('signedIn', JSON.stringify(signedIn));
+                localStorage.setItem('userSignedIn', JSON.stringify(username));
                 window.location.replace("/");
-                // If there's an error, log the error
                 console.log("SOMETHING WORKED");
 
             })
             .catch(function (err) {
+                let signedIn = false;
+                localStorage.setItem('signedIn', JSON.stringify(signedIn));
                 console.log("SOMETHING BROKE");
 
                 console.log(err);

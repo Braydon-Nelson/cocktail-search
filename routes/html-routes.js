@@ -1,4 +1,5 @@
 const path = require("path");
+const isSignedIn = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
     app.get("/", function (req, res) {
