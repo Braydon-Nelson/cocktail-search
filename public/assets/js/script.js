@@ -15,11 +15,12 @@ $("#random").click(function () {
 
         $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
         $(".card-title").text(data.drinks[0].strDrink);
-        $(".1").text(data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1);
-        $(".2").text(data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2);
-        $(".3").text(data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3);
+        for (let index = 1; index <= 16; index++) {
+            if (data.drinks[0]["strMeasure" + index] !== null) {
+                $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
+            }
+        }
         $(".card-text").text(data.drinks[0].strInstructions);
-
     });
 });
 
