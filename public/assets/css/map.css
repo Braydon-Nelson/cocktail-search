@@ -126,4 +126,17 @@ body {
     width: 345px;
   }
 
+  @media only screen and (max-width: 600px) {
+    #map {
+      height: 350px;
+      width: 350px;
+    }
+
+    #pac-input {
+      margin-top: 85%;
+      margin-left: -50%;
+      width: 65%;
+    }
+  }
+
   
