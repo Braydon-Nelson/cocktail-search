@@ -52,15 +52,12 @@
             <div class="col-md-1"></div>
             <div id="options" class="col-md-2">
                 <div id="serchOptions" class="dropdown">
-                    <button id="optionsButton" class="btn btn-secondary dropdown-toggle" type="button"
-                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Search Options
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Drink Name</a>
-                        <a class="dropdown-item" href="#">Ingredients</a>
-                        <a class="dropdown-item" href="#">Drink Glass</a>
-                    </div>
+                    <select id="optionsButton" aria-labelledby="dropdownMenuButton">
+                        <option value="0">Search Options</option>
+                        <option value="1">Drink Name</option>
+                        <option value="2">Ingredients</option>
+                        <option value="3">Drink Glass</option>
+                    </select>
                 </div>
             </div>
 
@@ -103,20 +100,21 @@
 
     <div class="dynamicCards">
 
-        <div class="card" style="width: 18rem;">
-            <img src="https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg" class="card-img-top">
-            <a class="favoriteDrink" href="#">
+
+        <div class="card invisible" style="width: 18rem;">
+            <img src="" class="card-img-top">
+            <a class="favoriteImage" href="#">
+
                 <img src="assets/images/png/002-martini-1.png" class="cardImage">
             </a>
             <div class="card-body">
-                <h5 class="card-title">Moscow Mule</h5>
+                <h5 class="card-title"></h5>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">2 oz Vodka</li>
-                    <li class="list-group-item">2 oz Lime juice</li>
-                    <li class="list-group-item">8 oz Ginger ale</li>
+                    <li class="list-group-item 1"></li>
+                    <li class="list-group-item 2"></li>
+                    <li class="list-group-item 3"></li>
                 </ul>
-                <p class="card-text">Combine vodka and ginger beer in a highball glass filled with ice. Add lime juice.
-                    Stir gently. Garnish.</p>
+                <p class="card-text"></p>
             </div>
         </div>
 

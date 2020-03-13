@@ -1,10 +1,16 @@
 $(document).ready(function () {
     // up here have code that grabs the dropdown option and search text
 
+    function selectedOption() {
+        var index = document.getElementById("Select").selectedIndex;
+        var options = document.getElementById("Select").options;
+    }
+
+
     // move on here
     api = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?";
 
-    switch (dropDownOption) {
+    switch (dropdownMenuButton) {
         case "Search by name":
             api += "s=" + searchText;
             break;
