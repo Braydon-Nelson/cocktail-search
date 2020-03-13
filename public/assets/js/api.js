@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // up here have code that grabs the dropdown option and search text
+
     function selectedOption() {
         var index = document.getElementById("Select").selectedIndex;
         var options = document.getElementById("Select").options;
