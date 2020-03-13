@@ -16,6 +16,7 @@ body {
 .container2 {
     display: flex;
     justify-content: center;
+    margin-top: 10%;
 }
 
 .container3 {
@@ -30,41 +31,6 @@ body {
 }
 
 
-    .btn-hover {
-        width: 200px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
-        cursor: pointer;
-        margin: 20px;
-        height: 55px;
-        text-align: center;
-        border: none;
-        background-size: 300% 100%;
-        border-radius: 50px;
-        transition: all .4s ease-in-out;
-        -o-transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        transition: all .4s ease-in-out;
-    }
-    
-    .btn-hover:hover {
-        background-position: 100% 0;
-        transition: all .4s ease-in-out;
-        -o-transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        transition: all .4s ease-in-out;
-    }
-    
-    .btn-hover:focus {
-        outline: none;
-    }
-    
-    .btn-hover.color-1 {
-        background-image: linear-gradient(to right, #fe6076, #f5ce62, #667eea, #8E37D7);
-        box-shadow: 0 4px 15px 0 rgba(118, 8, 168, 0.75);
-    }
-
 
 /* new map */
 
@@ -73,6 +39,8 @@ body {
     overflow: hidden;
     width: 900px;
     height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
   }
   /* Optional: Makes the sample page fill the window. */
   html, body {
@@ -134,6 +102,13 @@ body {
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 4px 15px 0px;
+    border-radius: 10px;
+  }
+
+  input#pac-input.controls {
+    left: 47%;
+    top: 17px;
   }
 
   #pac-input:focus {
@@ -150,3 +125,5 @@ body {
   #target {
     width: 345px;
   }
+
+  
