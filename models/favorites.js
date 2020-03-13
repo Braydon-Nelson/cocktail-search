@@ -1,9 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
     const Favorite = sequelize.define("Favorite", {
-        name: {
+        drinkName: {
             type: DataTypes.STRING
         },
-        picURL: {
+        imgURL: {
             type: DataTypes.STRING
         },
         ingredients: {
