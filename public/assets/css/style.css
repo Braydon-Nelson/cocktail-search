@@ -214,6 +214,15 @@ body {
   margin: 7px;
 }
 
+.cardImage {
+  position: absolute;
+  z-index: 100;
+  width: 15%;
+  height: 8%;
+  top: 3%;
+  left: 80%;
+}
+
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
