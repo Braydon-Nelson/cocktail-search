@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //grabs the dropdown option and search text
+
     document.getElementById("submit").addEventListener("click", function (event) {
         event.preventDefault();
         submitCards()
@@ -11,7 +11,6 @@ $(document).ready(function () {
         var searchText = document.getElementById("searchBar").value;
 
 
-        // move on here
         api = "https://www.thecocktaildb.com/api/json/v1/1/";
 
         switch (selectedOption) {
@@ -28,7 +27,6 @@ $(document).ready(function () {
 
         console.log(api);
 
-        //if statement for checkmark to decide whether or not its alcoholic
         function containsAlcohol() {
             var alcohol = document.getElementById("Checkmark").checked;
             if (alcohol === true) {
@@ -38,21 +36,6 @@ $(document).ready(function () {
             }
         };
 
-        // $.ajax({
-        //     url: api, method: "GET"
-        // }).then(function (data) {
-        //     console.log(data);
-        //     $(".card").removeClass("invisible");
-
-        //     $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
-        //     $(".card-title").text(data.drinks[0].strDrink);
-        //     for (let index = 1; index <= 16; index++) {
-        //         if (data.drinks[0]["strMeasure" + index] !== null || undefined) {
-        //             $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
-        //         }
-        //     }
-        //     $(".card-text").text(data.drinks[0].strInstructions);
-        // });
 
         var settings = {
             "url": api,
@@ -101,23 +84,28 @@ $(document).ready(function () {
         title.innerHTML = APIdata.drinks[0].strDrink;
         cardBody.appendChild(title);
 
-        var ul = document.createElement('ul');
-        var text = document.createElement('li');
-        text.classList.add('list-group-item', 'list-group-item-action');
-        text.innerHTML = APIdata.drinks[0].strIngredient1;
-        text.innerHTML = APIdata.drinks[0].strMeasure1;
-        text.innerHTML = APIdata.drinks[0].strIngredient2;
-        text.innerHTML = APIdata.drinks[0].strMeasure2;
-        text.innerHTML = APIdata.drinks[0].strIngredient3;
-        text.innerHTML = APIdata.drinks[0].strMeasure3;
-        cardBody.appendChild(ul);
-        ul.appendChild(text);
-
         var image = document.createElement('img');
-        image.classList.add('card-img-bottom');
+        image.classList.add('card-img-top');
         image.style.width = '100%';
         image.setAttribute('src', APIdata.drinks[0].strDrinkThumb);
         cardBody.appendChild(image);
+
+        var ul = document.createElement('ul');
+        ul.classList.add('list-group-item', 'list-group-item-action');
+        var in1 = document.createElement('p');
+        in1.innerHTML = APIdata.drinks[0].strMeasure1 + " " + APIdata.drinks[0].strIngredient1;
+
+        var in2 = document.createElement('p');
+        in2.innerHTML = APIdata.drinks[0].strMeasure2 + " " + APIdata.drinks[0].strIngredient2;
+
+        var in3 = document.createElement('p');
+        in3.innerHTML = APIdata.drinks[0].strMeasure3 + " " + APIdata.drinks[0].strIngredient3;
+
+        cardBody.appendChild(ul);
+        ul.appendChild(in1);
+        ul.appendChild(in2);
+        ul.appendChild(in3);
+
 
 
     };
