@@ -12,17 +12,17 @@ $(document).ready(function () {
 
 
         // move on here
-        api = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?";
+        api = "https://www.thecocktaildb.com/api/json/v1/1/";
 
         switch (selectedOption) {
             case "1":
-                api += "s=" + searchText;
+                api += "search.php?s=" + searchText;
                 break;
             case "2":
-                api += "i=" + searchText;
+                api += "filter.php?i=" + searchText;
                 break;
             case "3":
-                api += "g=" + searchText
+                api += "filter.php?g=" + searchText
                 break;
         };
 
@@ -38,17 +38,68 @@ $(document).ready(function () {
             }
         };
 
-        //ajax call
-        var settings = {
-            "url": api,
-            "method": "GET",
-            "timeout": 0,
-        };
+        $.ajax({
+            url: api, method: "GET"
+        }).then(function (data) {
+            console.log(data);
+            $(".card").removeClass("invisible");
 
-        $.ajax(settings).then(function (response) {
-            console.log(response);
+            $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
+            $(".card-title").text(data.drinks[0].strDrink);
+            for (let index = 1; index <= 16; index++) {
+                if (data.drinks[0]["strMeasure" + index] !== null) {
+                    $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
+                }
+            }
+            $(".card-text").text(data.drinks[0].strInstructions);
         });
 
     };
 
+    // var elem = document.createElement('div');
+    // var test = document.createTextNode('test test');
+    // elem.appendChild(test);
+    // document.body.appendChild(elem);
+
+    // function callback(APIdata) {
+    //     for (i = 0; i < APIdata.length; i++) {
+
+    //         var cardData = {}
+
+    //         cardData.name = APIdata[i].drinks.strDrink;
+    //         cardData.alcoholic = APIdata[i].drinks.strAlcoholic;
+    //         cardData.glass = APIdata[i].drinks.strGlass;
+    //         cardData.instructions = APIdata[i].drinks.strInstructions;
+    //         cardData.image = APIdata[i].drinks.strDrinkThumb;
+    //         cardData.ingredient1 = APIdata[i].drinks.strIngredient1;
+    //         cardData.measure1 = APIdata[i].drinks.strMeasure1;
+
+    //     }
+
+    //     var creatingCard = document.createElement('div');
+    //     creatingCard.classList.add('card');
+    //     creatingCard.style.width = '400px';
+
+    //     var cardBody = document.createElement('div');
+    //     cardBody.classList.add('card-body');
+
+    //     var title = document.createElement('h4');
+    //     title.classList.add('card-title');
+    //     //add api call for drink name
+
+    //     var text = document.createElement('li');
+    //     text.classList.add('list-group-item list-group-item-action');
+    //     //add api call for ingredients
+
+    //     var image = document.createElement('img');
+    //     image.classList.add('card-img-bottom');
+    //     image.style.width = '100%';
+    //     //add api call for drink img
+
+
+
+
+    // };
+
 });
+
