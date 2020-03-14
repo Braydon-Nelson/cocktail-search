@@ -84,6 +84,16 @@ $(document).ready(function () {
         title.innerHTML = APIdata.drinks[0].strDrink;
         cardBody.appendChild(title);
 
+        var favorite = document.createElement('a');
+        favorite.classList.add('favoriteImage');
+        favorite.setAttribute('href', "#");
+        cardBody.appendChild(favorite);
+
+        var favoriteImg = document.createElement('img');
+        favoriteImg.classList.add('cardImage');
+        favoriteImg.setAttribute('src', "assets/images/png/002-martini-1.png");
+        favorite.appendChild(favoriteImg);
+
         var image = document.createElement('img');
         image.classList.add('card-img-top');
         image.style.width = '100%';
@@ -105,6 +115,10 @@ $(document).ready(function () {
         ul.appendChild(in1);
         ul.appendChild(in2);
         ul.appendChild(in3);
+
+        var inst = document.createElement('p');
+        inst.innerHTML = APIdata.drinks[0].strInstructions;
+        cardBody.appendChild(inst);
 
 
 

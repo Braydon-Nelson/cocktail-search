@@ -13,9 +13,11 @@ $("#random").click(function () {
         console.log(data);
         $(".card").removeClass("invisible");
 
+        // $(".card").attr('style', 'display: none;')
+
         $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
         $(".card-title").text(data.drinks[0].strDrink);
-        for (let index = 1; index <= 16; index++) {
+        for (let index = 1; index <= 3; index++) {
             if (data.drinks[0]["strMeasure" + index] !== null) {
                 $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
             }
