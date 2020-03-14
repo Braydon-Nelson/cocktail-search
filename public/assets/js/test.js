@@ -3,28 +3,29 @@
 // THIS FILE SHOULD BE DELETED FOR PRODUCTION
 
 
-$(".favoriteDrink").on("click", function (event) {
-    console.log(this.parentNode);
+$(".favoriteImage").on("click", function (event) {
+    event.preventDefault();
+    var itemList = [];
+    for (let i = 0; i < this.parentNode.children[2].children[1].children.length; i++) {
+        const element = this.parentNode.children[2].children[1].children[i].innerHTML;
+        itemList.push(element);
+    }
 
+    console.log(this.parentNode.children[0].src);
     $(this.children[0]).attr("src", "assets/images/png/001-martini.png");
 
-    $.post("/api/signup", {
-        drinkName: username,
-        imgURL: email,
-        ingredients: password,
-        ingredientMeasurements: asdf,
-        description: asdf
+    $.post("/api/favorite", {
+        drinkName: this.parentNode.children[2].children[0].innerHTML,
+        imgURL: this.parentNode.children[0].src,
+        ingredients: itemList,
+        description: this.parentNode.children[2].children[2].innerHTML
     })
         .then(function (data) {
-            console.log("Should be redirecting");
-            let signedIn = true;
-            localStorage.setItem('signedIn', JSON.stringify(signedIn));
-            localStorage.setItem('userSignedIn', JSON.stringify(username));
+            console.log("Posted to db");
 
-            window.location.replace("/");
             // If there's an error, handle it by throwing up a bootstrap alert
         })
-        .catch(handleLoginErr);
+        .catch();
 
 })
 
