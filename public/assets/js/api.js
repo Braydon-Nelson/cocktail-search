@@ -94,12 +94,12 @@ $(document).ready(function () {
 
         var cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
-        document.getElementsByClassName("card")[0].appendChild(cardBody);
+        creatingCard.appendChild(cardBody);
 
         var title = document.createElement('h4');
         title.classList.add('card-title');
         title.innerHTML = APIdata.drinks[0].strDrink;
-        document.getElementsByClassName("card-body")[0].appendChild(title);
+        cardBody.appendChild(title);
 
         var ul = document.createElement('ul');
         var text = document.createElement('li');
@@ -110,13 +110,14 @@ $(document).ready(function () {
         text.innerHTML = APIdata.drinks[0].strMeasure2;
         text.innerHTML = APIdata.drinks[0].strIngredient3;
         text.innerHTML = APIdata.drinks[0].strMeasure3;
+        cardBody.appendChild(ul);
         ul.appendChild(text);
 
         var image = document.createElement('img');
         image.classList.add('card-img-bottom');
         image.style.width = '100%';
         image.setAttribute('src', APIdata.drinks[0].strDrinkThumb);
-        document.getElementsByClassName(card)[0].appendChild(image);
+        cardBody.appendChild(image);
 
 
     };
