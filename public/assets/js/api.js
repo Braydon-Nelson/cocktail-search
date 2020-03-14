@@ -38,20 +38,30 @@ $(document).ready(function () {
             }
         };
 
-        $.ajax({
-            url: api, method: "GET"
-        }).then(function (data) {
-            console.log(data);
-            $(".card").removeClass("invisible");
+        // $.ajax({
+        //     url: api, method: "GET"
+        // }).then(function (data) {
+        //     console.log(data);
+        //     $(".card").removeClass("invisible");
 
-            $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
-            $(".card-title").text(data.drinks[0].strDrink);
-            for (let index = 1; index <= 16; index++) {
-                if (data.drinks[0]["strMeasure" + index] !== null) {
-                    $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
-                }
-            }
-            $(".card-text").text(data.drinks[0].strInstructions);
+        //     $(".card-img-top").attr("src", data.drinks[0].strDrinkThumb);
+        //     $(".card-title").text(data.drinks[0].strDrink);
+        //     for (let index = 1; index <= 16; index++) {
+        //         if (data.drinks[0]["strMeasure" + index] !== null || undefined) {
+        //             $(`.${index}`).text(data.drinks[0]["strMeasure" + index] + " " + data.drinks[0]["strIngredient" + index]);
+        //         }
+        //     }
+        //     $(".card-text").text(data.drinks[0].strInstructions);
+        // });
+
+        var settings = {
+            "url": api,
+            "method": "GET",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
         });
 
     };
@@ -61,45 +71,66 @@ $(document).ready(function () {
     // elem.appendChild(test);
     // document.body.appendChild(elem);
 
-    // function callback(APIdata) {
-    //     for (i = 0; i < APIdata.length; i++) {
+    function callback(APIdata) {
+        for (i = 0; i < APIdata.length; i++) {
 
-    //         var cardData = {}
+            var cardData = {}
 
-    //         cardData.name = APIdata[i].drinks.strDrink;
-    //         cardData.alcoholic = APIdata[i].drinks.strAlcoholic;
-    //         cardData.glass = APIdata[i].drinks.strGlass;
-    //         cardData.instructions = APIdata[i].drinks.strInstructions;
-    //         cardData.image = APIdata[i].drinks.strDrinkThumb;
-    //         cardData.ingredient1 = APIdata[i].drinks.strIngredient1;
-    //         cardData.measure1 = APIdata[i].drinks.strMeasure1;
+            cardData.name = APIdata.drinks[0].strDrink;
+            cardData.alcoholic = APIdata.drinks[0].strAlcoholic;
+            cardData.glass = APIdata.drinks[0].strGlass;
+            cardData.instructions = APIdata.drinks[0].strInstructions;
+            cardData.image = APIdata.drinks[0].strDrinkThumb;
+            cardData.ingredient1 = APIdata.drinks[0].strIngredient1;
+            cardData.measure1 = APIdata.drinks[0].strMeasure1;
+            cardData.ingredient2 = APIdata[i].drinks.strIngredient2;
+            cardData.measure2 = APIdata[i].drinks.strMeasure2;
+            cardData.ingredient3 = APIdata[i].drinks.strIngredient3;
+            cardData.measure3 = APIdata[i].drinks.strMeasure3;
 
-    //     }
+        }
 
-    //     var creatingCard = document.createElement('div');
-    //     creatingCard.classList.add('card');
-    //     creatingCard.style.width = '400px';
+        var creatingCard = document.createElement('div');
+        creatingCard.classList.add('card');
+        creatingCard.style.width = '400px';
+        document.getElementsByClassName("dynamicCards").append(creatingCard);
 
-    //     var cardBody = document.createElement('div');
-    //     cardBody.classList.add('card-body');
+        var cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+        document.getElementsByClassName("card").append(cardBody);
 
-    //     var title = document.createElement('h4');
-    //     title.classList.add('card-title');
-    //     //add api call for drink name
-
-    //     var text = document.createElement('li');
-    //     text.classList.add('list-group-item list-group-item-action');
-    //     //add api call for ingredients
-
-    //     var image = document.createElement('img');
-    //     image.classList.add('card-img-bottom');
-    //     image.style.width = '100%';
-    //     //add api call for drink img
+        var title = document.createElement('h4');
+        title.classList.add('card-title');
+        title.innerHTML = APIdata.drinks[0].strDrink;
+        document.getElementsByClassName("card-body").append(title);
 
 
+        var ul = document.createElement('ul');
+        var text = document.createElement('li');
+        text.classList.add('list-group-item list-group-item-action');
+        text.li.innerHTML = APIdata.drinks[0].strIngredient1;
+        text.li.innerHTML = APIdata.drinks[0].strMeasure1;
+        text.li.innerHTML = APIdata.drinks[0].strIngredient2;
+        text.li.innerHTML = APIdata.drinks[0].strMeasure2;
+        text.li.innerHTML = APIdata.drinks[0].strIngredient3;
+        text.li.innerHTML = APIdata.drinks[0].strMeasure3;
+        ul.append('text');
 
 
-    // };
+        var image = document.createElement('img');
+        image.classList.add('card-img-bottom');
+        image.style.width = '100%';
+        image.attr('src', APIdata.drinks[0].strDrinkThumb);
+        document.getElementsByClassName("card-img-bottom").append(image);
+
+
+
+
+
+
+
+
+    };
 
 });
 
