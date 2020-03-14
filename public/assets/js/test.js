@@ -6,8 +6,8 @@
 $(".favoriteImage").on("click", function (event) {
     event.preventDefault();
     var itemList = [];
-    for (let i = 0; i < this.parentNode.children[2].children[1].children.length; i++) {
-        const element = this.parentNode.children[2].children[1].children[i].innerHTML;
+    for (let i = 0; i < this.parentNode.children[3].children.length; i++) {
+        const element = this.parentNode.children[3].children[i].innerHTML;
         itemList.push(element);
     }
 
@@ -15,10 +15,10 @@ $(".favoriteImage").on("click", function (event) {
     $(this.children[0]).attr("src", "assets/images/png/001-martini.png");
 
     $.post("/api/favorite", {
-        drinkName: this.parentNode.children[2].children[0].innerHTML,
-        imgURL: this.parentNode.children[0].src,
+        drinkName: this.parentNode.children[0].innerHTML,
+        imgURL: this.parentNode.children[2].src,
         ingredients: itemList,
-        description: this.parentNode.children[2].children[2].innerHTML
+        description: this.parentNode.children[4].innerHTML
     })
         .then(function (data) {
             console.log("Posted to db");
