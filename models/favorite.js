@@ -9,20 +9,13 @@ module.exports = function (sequelize, DataTypes) {
         ingredients: {
             type: DataTypes.STRING
         },
-        ingredientMeasurements: {
-            type: DataTypes.STRING
-        },
         description: {
             type: DataTypes.STRING
         }
     });
 
     Favorite.associate = function (models) {
-        Favorite.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        Favorite.belongsTo(models.User);
     };
 
     return Favorite;

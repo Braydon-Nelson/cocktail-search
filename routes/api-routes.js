@@ -25,22 +25,23 @@ module.exports = function (app) {
 
     app.post("/api/favorite", function (req, res) {
         db.Favorite.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
+            drinkName: req.body.drinkName,
+            imgURL: req.body.imgURL,
+            ingredients: req.body.ingredients,
+            description: req.body.description
         })
             .then(function () {
-                res.redirect("/");
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    app.get("/logout", function (req, res) {
-        req.logout();
-        res.redirect("/");
-    });
+    // app.get("/logout", function (req, res) {
+    //     req.logout();
+    //     localStorage.clear();
+    //     res.redirect("/");
+    // });
 
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function (req, res) {
