@@ -1,4 +1,4 @@
-# Gigit
+# Cocktail Searcher
 
 Full-stack application that gives you a place to search for different drinks and find liqour stores near you. 
 
