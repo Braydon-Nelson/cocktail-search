@@ -79,7 +79,7 @@ localhost:8080
 
 ## Authors
 
-See the list of [contributors](https://github.com/Braydon-Nelson/cocktial-search/graphs/contributors) who participated 
+See the list of [contributors](https://github.com/Braydon-Nelson/cocktail-search/graphs/contributors) who participated 
 in this project along with individual commit history. 
 
 ## Planned updates
